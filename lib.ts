@@ -87,21 +87,21 @@ class PhantomFleet implements IPhantomFleet {
         }
     }
 
+    public remove = () => {
+        this.container && this.container.stop((err, data) => {
+            if (err) {
+                console.error('Error stopping the container:', err);
+            } else {
+                this.container && this.container.remove();
+            }
+        })
+    }
     public stop = () => {
-        console.log("+++stop", this.container?.modem)
         this.stopContainer()
-
-        if (this.container?.modem?.port) {
-            // this.container.stop();
-            // this.container.remove();
-            // console.log("+++stop2", this.container)
-            // this.container = null
-            // this.timer = null
-        }
     }
 
 
-    stopContainer = async () => {
+    private stopContainer = async () => {
         if (this.container) {
             await this.container.pause();
             this.container = null;

@@ -16,9 +16,25 @@ switch (process.argv[2]) {
         });
         break
     case "stopAll":
-        console.log("stop all")
         client = net.createConnection({path: socketPath}, () => {
             const jsonData: EventMessageType = {type: EEvent.STOP_ALL};
+            const jsonDataString = JSON.stringify(jsonData);
+            client && client.write(jsonDataString);
+        });
+        break
+    case "removeAll":
+        console.log("removeAll")
+        client = net.createConnection({path: socketPath}, () => {
+            const jsonData: EventMessageType = {type: EEvent.REMOVE_ALL};
+            const jsonDataString = JSON.stringify(jsonData);
+            client && client.write(jsonDataString);
+        });
+        break
+    case "remove":
+        console.log("removeAll")
+        client = net.createConnection({path: socketPath}, () => {
+            if (!process.argv[3]) throw new Error("Specify ID!")
+            const jsonData: EventMessageType = {type: EEvent.REMOVE, appId: +process.argv[3]};
             const jsonDataString = JSON.stringify(jsonData);
             client && client.write(jsonDataString);
         });

@@ -1,6 +1,7 @@
 export interface IPhantomFleet {
     start: () => void
     stop: () => void
+    remove: () => void
 }
 
 export interface IApp {
@@ -19,7 +20,9 @@ export enum EEvent {
     "START",
     "STOP",
     "STOP_ALL",
-    "GET_LIST"
+    "GET_LIST",
+    "REMOVE",
+    "REMOVE_ALL",
 }
 
 export type EventMessageType =
@@ -38,5 +41,14 @@ export type EventMessageType =
     }
     |
     {
-        type: EEvent.STOP_ALL
+        type: EEvent.STOP_ALL,
+    }
+    |
+    {
+        type: EEvent.REMOVE,
+        appId: number
+    }
+    |
+    {
+        type: EEvent.REMOVE_ALL
     }
