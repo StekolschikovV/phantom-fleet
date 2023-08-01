@@ -1,5 +1,5 @@
+#!/usr/bin/env node
 "use strict";
-// example.js
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -9,7 +9,7 @@ const fs_1 = __importDefault(require("fs"));
 const interface_1 = require("./interface");
 const lib_1 = __importDefault(require("./lib"));
 // Удаление сокета, если он существует
-const socketPath = '/tmp/my_unix_socket3';
+const socketPath = '/tmp/my_unix_socket6';
 if (fs_1.default.existsSync(socketPath)) {
     fs_1.default.unlinkSync(socketPath);
 }

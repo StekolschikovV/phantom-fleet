@@ -1,4 +1,4 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env node
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -7,8 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const net_1 = __importDefault(require("net"));
 const interface_1 = require("./interface");
 const fs_1 = __importDefault(require("fs"));
+const { spawn } = require('child_process');
 let client = null;
-const socketPath = '/tmp/my_unix_socket3';
+const socketPath = '/tmp/my_unix_socket6';
 switch (process.argv[2]) {
     case "list":
         client = net_1.default.createConnection({ path: socketPath }, () => {
@@ -65,6 +66,13 @@ switch (process.argv[2]) {
                 client && client.write(jsonDataString);
             }
         });
+        break;
+    case "startDamon":
+        const scriptProcess = spawn('node', ['./background.js'], {
+            detached: true,
+            stdio: 'ignore',
+        });
+        scriptProcess.unref();
         break;
     default:
         console.log("Command not recognized!");

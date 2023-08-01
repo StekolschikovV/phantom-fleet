@@ -1,4 +1,4 @@
-// example.js
+#!/usr/bin/env node
 
 import net from 'net';
 import fs from 'fs';
@@ -6,7 +6,7 @@ import {EEvent, EventMessageType, IApp} from "./interface";
 import PhantomFleet from "./lib";
 
 // Удаление сокета, если он существует
-const socketPath = '/tmp/my_unix_socket3';
+const socketPath = '/tmp/my_unix_socket6';
 if (fs.existsSync(socketPath)) {
     fs.unlinkSync(socketPath);
 }
