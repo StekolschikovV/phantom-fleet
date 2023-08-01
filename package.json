@@ -1,6 +1,6 @@
 {
   "name": "phantom-fleet",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Phantom Fleet: Optimize Docker images with dynamic proxy management.",
   "repository": {
     "type": "git",
