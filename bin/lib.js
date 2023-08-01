@@ -82,7 +82,19 @@ class PhantomFleet {
                     console.error('Error stopping the container:', err);
                 }
                 else {
-                    this.container && this.container.remove();
+                    this.container && this.container.remove({ force: true }, function (err, data) {
+                        if (err) {
+                            if (err.statusCode === 409) {
+                                console.error('Container is already in progress of removal');
+                            }
+                            else {
+                                console.error('Error removing the container:', err);
+                            }
+                        }
+                        else {
+                            console.log('Container removed successfully');
+                        }
+                    });
                 }
             });
         };

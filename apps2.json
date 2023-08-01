@@ -11,11 +11,11 @@
       "APP_PORT": 3001
     },
     {
-      "CONTAINER_NAME": "docker-ksonny4/simple-docker-http-server",
+      "CONTAINER_NAME": "docker-simple-docker-http-server",
       "LOG_START_TEXT": "used 8080",
       "TIMEOUT_INACTIVE": 100000,
       "IMAGE": "ksonny4/simple-docker-http-server",
-      "PORT": "8080/tcp",
+      "PORT": "8080",
       "HOST_PORT": "1234",
       "TARGET": "http://localhost:1234",
       "APP_PORT": 3002
