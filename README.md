@@ -11,7 +11,7 @@ aims to optimize the running Docker processes to save resources.
 You can install Phantom Fleet via npm:
 
 ```bash
-npm install phantom-fleet
+npm install -g phantom-fleet
 ```
 
 ## Configuration
