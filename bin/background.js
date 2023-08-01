@@ -80,7 +80,7 @@ const server = net_1.default.createServer((client) => {
         newApps.forEach(a => {
             try {
                 if (apps.filter(ao => ao.CONTAINER_NAME === a.CONTAINER_NAME || ao.APP_PORT === a.APP_PORT).length === 0) {
-                    const app = new lib_1.default(a.CONTAINER_NAME, a.LOG_START_TEXT, a.TIMEOUT_INACTIVE, a.IMAGE, a.PORT, a.HOST_PORT, a.TARGET, a.APP_PORT);
+                    const app = new lib_1.default(a.CONTAINER_NAME, a.LOG_START_TEXT, a.TIMEOUT_INACTIVE, a.IMAGE, a.PORT, a.HOST_PORT, a.TARGET, a.APP_PORT, a.ENV);
                     app.start();
                     apps.push({
                         CONTAINER_NAME: a.CONTAINER_NAME,
@@ -91,6 +91,7 @@ const server = net_1.default.createServer((client) => {
                         HOST_PORT: a.HOST_PORT,
                         TARGET: a.TARGET,
                         APP_PORT: a.APP_PORT,
+                        ENV: a.ENV,
                         instance: app
                     });
                 }

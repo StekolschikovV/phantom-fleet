@@ -29,7 +29,11 @@ To use Phantom Fleet, you need to create a configuration file (e.g., `apps.json`
       "PORT": "80/tcp",
       "HOST_PORT": "88",
       "TARGET": "http://localhost:88",
-      "APP_PORT": 3001
+      "APP_PORT": 3001,
+      "ENV": [
+        "VAR1=value1",
+        "VAR2=value2"
+      ]
     }
     // Add more applications as needed
   ]
@@ -44,6 +48,7 @@ To use Phantom Fleet, you need to create a configuration file (e.g., `apps.json`
 - `HOST_PORT`: The port opened on the host machine.
 - `TARGET`: The address to which requests will be redirected to the Docker image.
 - `APP_PORT`: The port on which the application inside the container will work.
+- `ENV`: The environment variables of the container.
 
 ## Usage
 

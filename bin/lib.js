@@ -18,7 +18,7 @@ const express_1 = __importDefault(require("express"));
 const dockerode_1 = __importDefault(require("dockerode"));
 const portscanner_1 = __importDefault(require("portscanner"));
 class PhantomFleet {
-    constructor(CONTAINER_NAME, LOG_START_TEXT, TIMEOUT_INACTIVE, IMAGE, PORT, HOST_PORT, TARGET, APP_PORT) {
+    constructor(CONTAINER_NAME, LOG_START_TEXT, TIMEOUT_INACTIVE, IMAGE, PORT, HOST_PORT, TARGET, APP_PORT, ENV) {
         this.container = null;
         this.timer = null;
         this.CONTAINER_NAME = "";

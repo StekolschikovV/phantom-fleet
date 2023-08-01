@@ -13,6 +13,7 @@ export interface IApp {
     HOST_PORT: string
     TARGET: string
     APP_PORT: number
+    ENV: string[]
     instance?: IPhantomFleet
 }
 

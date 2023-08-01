@@ -22,7 +22,7 @@ class PhantomFleet implements IPhantomFleet {
     TARGET: string
     APP_PORT: number
 
-    constructor(CONTAINER_NAME: string, LOG_START_TEXT: string, TIMEOUT_INACTIVE: number, IMAGE: string, PORT: string | number, HOST_PORT: string | number, TARGET: string, APP_PORT: number) {
+    constructor(CONTAINER_NAME: string, LOG_START_TEXT: string, TIMEOUT_INACTIVE: number, IMAGE: string, PORT: string | number, HOST_PORT: string | number, TARGET: string, APP_PORT: number, ENV: string[]) {
         this.CONTAINER_NAME = CONTAINER_NAME
         this.LOG_START_TEXT = LOG_START_TEXT
         this.TIMEOUT_INACTIVE = TIMEOUT_INACTIVE

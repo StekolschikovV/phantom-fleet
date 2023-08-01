@@ -8,7 +8,11 @@
       "PORT": "80/tcp",
       "HOST_PORT": "88",
       "TARGET": "http://localhost:88",
-      "APP_PORT": 3001
+      "APP_PORT": 3001,
+      "ENV": [
+        "VAR1=value1",
+        "VAR2=value2"
+      ]
     }
   ]
 }
