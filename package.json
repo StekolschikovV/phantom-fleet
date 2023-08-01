@@ -1,18 +1,24 @@
 {
   "name": "phantom-fleet",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./bin/index.js",
+  "bin": {
+    "phantom-fleet": "./bin/index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node src/index.ts",
+    "publish": "npm publish",
+    "postinstall": "node ./bin/postinstall.js",
+    "postuninstall": "node ./bin/postuninstall.js",
+    "test-install-localy": "npm link",
+    "test-uninstall-localy": "npm uninstall -g phantom-fleet",
+    "test-reintall": "tsc && npm run test-uninstall-localy && npm run test-install-localy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/dockerode": "^3.3.19",
-    "@types/express": "^4.17.17",
-    "@types/node": "^20.4.5",
     "cors": "^2.8.5",
     "dockerode": "^3.3.5",
     "express": "^4.18.2",
@@ -24,6 +30,9 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
+    "@types/dockerode": "^3.3.19",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.5",
     "@types/portscanner": "^2.1.1"
   }
 }

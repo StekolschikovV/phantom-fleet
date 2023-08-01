@@ -39,7 +39,6 @@ class PhantomFleet implements IPhantomFleet {
     public start = () => {
         try {
             this.app.use(async (req: Request, res: Response, next: NextFunction) => {
-                console.log("++++", this.container === null)
                 if (this.container === null) {
                     this.container = await this.docker.getContainer(this.CONTAINER_NAME);
                     await this.startContainer();
@@ -89,11 +88,15 @@ class PhantomFleet implements IPhantomFleet {
     }
 
     public stop = () => {
-        if (this.container) {
-            this.container.stop();
-            this.container.remove();
-            this.container = null
-            this.timer = null
+        console.log("+++stop", this.container?.modem)
+        this.stopContainer()
+
+        if (this.container?.modem?.port) {
+            // this.container.stop();
+            // this.container.remove();
+            // console.log("+++stop2", this.container)
+            // this.container = null
+            // this.timer = null
         }
     }
 
