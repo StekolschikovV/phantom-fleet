@@ -1,3 +1,26 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/StekolschikovV/phantom-fleet/HEAD/logo.jpg" alt="Strapi-Translate" height="100" />
+</p>
+<div align="center">
+  <h1>Phantom Fleet - Your Repository Name</h1>
+  <p>Replace this with a brief description of your project.</p>
+  <a href="https://www.npmjs.org/package/phantom-fleet">
+    <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/StekolschikovV/phantom-fleet/main?filename=package.json&label=npm&logo=npm">
+  </a>
+  <a href="https://www.npmjs.org/package/phantom-fleet">
+    <img src="https://img.shields.io/npm/dm/phantom-fleet.svg" alt="Monthly download on NPM" />
+  </a>
+  <a href="https://github.com/StekolschikovV/phantom-fleet/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/StekolschikovV/phantom-fleet/build.yml/main" alt="Build" />
+  </a>
+  <a href="https://codecov.io/gh/StekolschikovV/phantom-fleet" > 
+    <img src="https://codecov.io/gh/StekolschikovV/phantom-fleet/branch/main/graph/badge.svg?token=YOUR_CODECOV_TOKEN_HERE"/> 
+  </a>
+  <a href="http://commitizen.github.io/cz-cli/">
+    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly" />
+  </a>
+</div>
+
 # Phantom Fleet
 
 Phantom Fleet is a Node.js package that allows you to manage and control Docker images using configuration files. It

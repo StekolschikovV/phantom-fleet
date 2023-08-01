@@ -1,7 +1,11 @@
 {
   "name": "phantom-fleet",
-  "version": "0.7.2",
-  "description": "",
+  "version": "0.7.3",
+  "description": "Phantom Fleet: Optimize Docker images with dynamic proxy management.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StekolschikovV/phantom-fleet.git"
+  },
   "main": "./bin/index.js",
   "bin": {
     "phantom-fleet": "./bin/index.js",
